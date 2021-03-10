@@ -6,7 +6,7 @@ from dateutil.relativedelta import *
 import plotly.graph_objects as go
 import streamlit as st
 
-data = pd.read_excel("Argus Historical Prices.csv", sheet_name= "Sheet1")
+data = pd.read_excel("Argus Historical Prices.xlsx", sheet_name= "Sheet1", engine='openpyxl')
 data.dropna(inplace=True)
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=data.Date, y=data.Murban,
