@@ -25,6 +25,11 @@ data["Spread"] = abs(data["Murban"] - data["Ice Brent"])
 fig2 = px.line(data, x="Date", y="Spread")
 st.plotly_chart(fig2)
 
+data["Murban - Nymex WTI Spread"] = abs(data["Murban"] - data["Nymex WTI"])
+fig4 = px.line(data, x="Date", y="Murban - Nymex WTI Spread")
+st.plotly_chart(fig4)
+
+
 data["Murban_pct"] = data["Murban"].pct_change()
 data["Ice Brent_pct"] = data["Ice Brent"].pct_change()
 
